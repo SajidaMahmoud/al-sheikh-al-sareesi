@@ -1,0 +1,35 @@
+/* Global styles only: design tokens, reset and Arabic body font.
+   Everything component-specific lives next to its component (*.module.css). */
+
+:root{
+  --cream:#f4f2ed;
+  --paper:#fbfaf7;
+  --brown:#111111;
+  --brown2:#33312d;
+  --gold:#c9a227;
+  --muted:#77736b;
+  --line:#d9d5cc;
+  --white:#ffffff;
+  --shadow:0 20px 60px rgba(17,17,17,.10);
+  --radius:24px;
+
+  /* Fonts (loaded from Google Fonts in index.html) */
+  --font-en:"Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-ar:"Almarai", "Roboto", system-ui, "Segoe UI", sans-serif;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: var(--font-en);
+  color:var(--brown);
+  background:var(--cream);
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+
+/* ARABIC MODE (body.ar is toggled in App.jsx).
+   Per-component RTL tweaks live in each component's module via :global(body.ar). */
+body.ar{font-family:var(--font-ar)}

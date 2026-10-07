@@ -1,0 +1,5 @@
+.section{padding:105px 0}
+
+@media(max-width:520px){
+  .section{padding:75px 0}
+}

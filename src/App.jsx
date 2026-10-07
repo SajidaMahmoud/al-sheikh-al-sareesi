@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { content } from "./content.js";
-import Nav from "./components/Nav.jsx";
-import Hero from "./components/Hero.jsx";
-import About from "./components/About.jsx";
-import Products from "./components/Products.jsx";
-import Business from "./components/Business.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
+import { content } from "@/content/content.js";
+import Nav from "@/components/layout/Nav/Nav.jsx";
+import Hero from "@/components/sections/Hero/Hero.jsx";
+import About from "@/components/sections/About/About.jsx";
+import Products from "@/components/sections/Products/Products.jsx";
+import Business from "@/components/sections/Business/Business.jsx";
+import Contact from "@/components/sections/Contact/Contact.jsx";
+import Footer from "@/components/layout/Footer/Footer.jsx";
 
 export default function App() {
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("ar");
   const t = content[lang];
 
   // Keep <html lang/dir> and the body class in sync with the language.

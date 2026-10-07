@@ -1,0 +1,17 @@
+.about{background:var(--paper);border-top:1px solid rgba(201,162,39,.35)}
+.grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:start}
+.quote{
+  
+  font-size:31px;line-height:1.25;
+  color:#111111;
+}
+.copy p{color:var(--brown2);max-width:680px}
+.ar{direction:rtl;text-align:left;font-family: var(--font-ar);color:var(--muted);font-size:16px}
+
+/* Arabic mode */
+:global(body.ar) .grid{direction:rtl}
+:global(body.ar) .copy{direction:rtl;text-align:right}
+
+@media(max-width:850px){
+  .grid{grid-template-columns:1fr;gap:40px}
+}

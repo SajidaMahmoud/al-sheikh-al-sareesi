@@ -1,0 +1,32 @@
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:stretch}
+
+/* Embedded Google map */
+.map{
+  width:100%;min-height:360px;border-radius:30px;
+  border:1px solid var(--line);
+}
+
+/* Details card */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:36px;box-shadow:0 8px 30px rgba(17,17,17,.04)}
+.card h3{font-size:32px;font-weight:500;margin:0 0 20px}
+.row{padding:16px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
+.row span{color:var(--muted);font-size:13px}
+.row strong{font-size:14px;text-align:right}
+
+.social{display:inline-flex;gap:10px}
+.social a{
+  width:38px;height:38px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--brown);
+  transition:.2s;
+}
+.social a:hover{background:var(--brown);color:#fff;transform:translateY(-2px)}
+
+/* Arabic mode */
+:global(body.ar) .grid{direction:rtl}
+:global(body.ar) .card{text-align:right}
+:global(body.ar) .row strong{text-align:left}
+
+@media(max-width:850px){
+  .grid{grid-template-columns:1fr;gap:40px}
+}

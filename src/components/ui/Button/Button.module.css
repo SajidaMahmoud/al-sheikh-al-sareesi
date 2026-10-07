@@ -1,0 +1,9 @@
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 20px;border-radius:999px;font-weight:800;font-size:14px;
+  border:1px solid transparent;transition:.2s;
+}
+.primary{background:var(--brown);color:white}
+.primary:hover{background:#241a14;transform:translateY(-2px)}
+.secondary{border-color:var(--line);background:rgba(255,250,242,.6)}
+.secondary:hover{background:var(--white)}

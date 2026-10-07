@@ -15,13 +15,30 @@ npm run preview  # preview the production build
 ## Project structure
 
 ```
-public/logo.png          Logo with transparent background (favicon)
-src/assets/logo.png      Same logo, imported by components
-src/content.js           All copy in English and Arabic, plus contact links
-src/styles.css           Global styles (design tokens, layout, RTL overrides)
-src/App.jsx              Language state; keeps <html lang/dir> in sync
-src/components/          Nav, Hero, About, Products, Business, Contact, Footer
+src/
+  main.jsx                     Entry point (imports global.css)
+  App.jsx                      Language state; keeps <html lang/dir> and body.ar in sync
+  content/content.js           All copy (en + ar) and contact links
+  styles/global.css            Design tokens (:root vars), reset, body font. Nothing component-specific
+  assets/logo.png              Logo imported by components
+  components/
+    layout/                    Page chrome:   Nav, Footer
+    sections/                  Page sections, in page order: Hero, About, Products, Business, Contact
+    ui/                        Shared building blocks: Container, Section, SectionKicker,
+                               SectionTitle, Button, Actions, Lines
 ```
+
+Every component lives in its own folder with a co-located CSS module:
+
+```
+components/sections/Hero/Hero.jsx
+components/sections/Hero/Hero.module.css
+```
+
+- Edit a component's look in its own `.module.css`; class names are scoped, so nothing leaks.
+- Arabic/RTL tweaks sit at the bottom of each module under `:global(body.ar)`, next to the responsive `@media` rules.
+- Colors and radius are shared via CSS variables in `styles/global.css`.
+- Imports use the `@/` alias for `src/` (configured in `vite.config.js`).
 
 ## Editing content
 
@@ -38,4 +55,3 @@ VITE_BASE=/<repo-name>/ npm run build
 ## To do
 
 - Replace the hero placeholder and product tiles with real photography
-- Replace the map placeholder with a real embedded map of the Jenin location

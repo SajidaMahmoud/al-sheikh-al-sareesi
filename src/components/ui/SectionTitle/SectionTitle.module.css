@@ -1,0 +1,8 @@
+.title{
+  
+  font-size:clamp(36px,5vw,58px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:500;
+  margin:8px 0 0;
+}

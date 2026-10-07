@@ -1,0 +1,96 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: 18px 0;
+  transition: 0.25s;
+}
+.scrolled {
+  background: rgba(247, 241, 231, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(57, 41, 31, 0.08);
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Brand lockup: logo + name */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 17px;
+}
+.mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.copy {
+  display: block;
+}
+.brand small {
+  display: block;
+  font-family: var(--font-ar);
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.links a {
+  opacity: 0.78;
+}
+.links a:hover {
+  opacity: 1;
+}
+
+.lang {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--brown);
+  border-radius: 999px;
+  padding: 8px 13px;
+  cursor: pointer;
+  font-family: var(--font-ar); /* label is Arabic while the page is English */
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Arabic mode */
+:global(body.ar) .lang {
+  font-family: var(--font-en); /* label reads "English" */
+}
+:global(body.ar) .inner,
+:global(body.ar) .brand,
+:global(body.ar) .links {
+  direction: rtl;
+}
+
+@media (max-width: 850px) {
+  .links {
+    display: none;
+  }
+}
